@@ -32,6 +32,8 @@ def index(request):
 def home(request):
     return render(request,'home/section.html')
 
+def book(request):
+    return render(request,'home/singlebook.html')
 
 def dashboard(request):
     return render(request,'home/dashboard.html')
