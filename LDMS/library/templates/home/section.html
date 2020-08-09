@@ -1,8 +1,38 @@
 {% extends 'home/main.html' %}
 
 {% block content %}
+
 <div class="section">
-<section class="section1"></section>
+<section class="section1">
+
+    <div class="center">
+        <div class="header">Login Form</div>
+       <form method="POST">
+        {%csrf_token%}
+         <input type="text" placeholder="Email or Username" name="username">
+         <i class="far fa-envelope"></i>
+         <input id="pswrd" type="password" placeholder="Password" name="password" >
+         <i class="fas fa-lock" onclick="show()"></i>
+         <input type="submit" value="Sign in">
+         <a href="#">Forgot Password?</a>
+        </form>
+    </div>
+</section>
 <section class="section2"></section>
 </div>
+<script>
+    function show(){
+     var pswrd = document.getElementById('pswrd');
+     var icon = document.querySelector('.fas');
+     if (pswrd.type === "password") {
+      pswrd.type = "text";
+      pswrd.style.marginTop = "20px";
+      icon.style.color = "#7f2092";
+     }else{
+      pswrd.type = "password";
+      icon.style.color = "grey";
+     }
+    }
+</script>
+   
 {% endblock %}
